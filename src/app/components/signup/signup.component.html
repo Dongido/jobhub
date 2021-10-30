@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Create Account</h5>
+                </div>
+                <div class="card-body">
+                  <form #loginForm="ngForm" (ngSubmit)="submitSignup()">
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="form.name" 
+                        placeholder="Full Name" required>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="!error.name">
+                        {{error.name}}
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email" 
+                        placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="!error.email">
+                        {{error.email}}
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="number" class="form-control" id="mobile" name="mobile" [(ngModel)]="form.mobile" 
+                        placeholder="Phone" required>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="!error.mobile">
+                        {{error.mobile}}
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password" 
+                        placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="!error.password">
+                        {{error.password}}
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="password" class="form-control" id="cpassword" name="password_confirmation" [(ngModel)]="form.password_confirmation" 
+                        placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="!error.password_confirmation">
+                        {{error.password_confirmation}}
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Register</button>
+                    </form>
+                </div>
+              </div>
+        </div>
+    </div>    
+</div>

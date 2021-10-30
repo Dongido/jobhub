@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 m-auto">
+            <div class="card mt-50">
+                <div class="card-header">
+                    <h5 class="card-title">Welcome Back</h5>
+                </div>
+                <div class="card-body">
+                  <form #loginForm="ngForm" (ngSubmit)="submitLogin()">
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email"
+                        placeholder="Enter Email" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password" 
+                        placeholder="Enter Password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Sign in</button>
+                    </form>
+                </div>
+              </div>
+        </div>
+    </div>    
+</div>
